@@ -2,6 +2,8 @@ package com.medicalregistry.medicalregistry.RestController;
 
 
 import com.medicalregistry.medicalregistry.entities.Categorias;
+import com.medicalregistry.medicalregistry.services.CategoriasService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,13 +16,11 @@ import java.util.List;
 @RequestMapping(value = "/categoriasapp")
 public class CategoriaController {
 
+    @Autowired
+    private CategoriasService service;
     @GetMapping
     public ResponseEntity<List<Categorias>> findAll(){
-        List<Categorias> list = new ArrayList<>();
-        list.add(new Categorias(1L, "medicos"));
-        list.add(new Categorias(2L, "pacientes"));
-        list.add(new Categorias(3L, "medicamentos"));
-        list.add(new Categorias(3L, "consulta"));
+        List<Categorias> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
 }
