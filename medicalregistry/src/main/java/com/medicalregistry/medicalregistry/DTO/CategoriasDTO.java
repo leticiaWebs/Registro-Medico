@@ -2,16 +2,23 @@ package com.medicalregistry.medicalregistry.DTO;
 
 import com.medicalregistry.medicalregistry.entities.Categorias;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.io.Serializable;
 
+
+@Entity
 public class CategoriasDTO implements Serializable {
     private static final long serialVersionUID = 1L;
+    @Id
     private Long id;
     private String nome;
 
     public CategoriasDTO(){
 
     }
+
 
     public CategoriasDTO(Long Id, String nome){
         super();

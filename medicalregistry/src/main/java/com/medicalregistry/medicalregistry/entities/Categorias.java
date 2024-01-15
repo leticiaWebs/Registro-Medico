@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tb_categorias_app")
+@Table(name = "TB_CATEGORIAS_APP")
 public class Categorias  implements Serializable {
    private static final long serialVersionUID = 1L;
     @Id
