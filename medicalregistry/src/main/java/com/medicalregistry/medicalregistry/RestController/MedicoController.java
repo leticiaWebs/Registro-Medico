@@ -25,7 +25,7 @@ public class MedicoController {
         return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping(value = "/{CRM}")
+    @GetMapping(value = "/{Id}")
     public ResponseEntity<MedicosDTO> findById(@PathVariable Long CRM){
         MedicosDTO dto = service.findById(CRM);
         return ResponseEntity.ok().body(dto);

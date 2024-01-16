@@ -12,8 +12,6 @@ public class MedicosDTO {
     @Id
     private Long Id;
 
-
-
     private Long CRM;
     private String nome;
     private String especialidade;
