@@ -3,6 +3,8 @@ package com.medicalregistry.medicalregistry.entities;
 
 import jakarta.persistence.*;
 
+import java.util.regex.Pattern;
+
 @Entity
 @Table(name  = "TB_PACIENTESCADASTRADOS" )
 public class Pacientes {
@@ -56,6 +58,19 @@ public class Pacientes {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+
+    public static boolean validarCPF(String cpf) {
+        cpf = cpf.replaceAll("[^0-9]", "");
+        if (cpf.length() != 11) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    public static boolean validarEmail(String email) {
+            return Pattern.matches(".+@.+\\..+", email);
+        }
 
 
 }
